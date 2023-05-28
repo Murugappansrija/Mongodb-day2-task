@@ -1,0 +1,316 @@
+ 1)Find all the topics and tasks which are thought in the month of October
+
+    db.student.find({$or: [{topic_date: {$gte : new Date("<2020-10-01>"), $lte: new Date("<2020-10-31>")}},{task_date: {$gte : new Date("<2020-10-01>"), $lte: new Date("<2020-10-31>")}}]},{topics: 1, tasks: 1}).toArray()
+
+  OUTPUT
+    [
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf6"),
+    topics: 'JavaScript',
+    tasks: 'functions'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf7"),
+    topics: 'Nodejs',
+    tasks: 'Authontication'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbff"),
+    topics: 'CSS',
+    tasks: 'responsive_web_design'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc00"),
+    topics: 'Node_js',
+    tasks: 'create_api'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc01"),
+    topics: 'Java Script',
+    tasks: 'responsive_web_design'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc02"),
+    topics: 'HTML',
+    tasks: 'Git Clone'
+  },
+  {
+    _id: ObjectId("6472e9f9b66e7742a549dc03"),
+    topics: 'Node_js',
+    tasks: 'create_api'
+  },
+  {
+    _id: ObjectId("6472e9f9b66e7742a549dc04"),
+    topics: 'Java Script',
+    tasks: 'Pagination'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d457"),
+    topics: 'JavaScript',
+    tasks: 'functions'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d458"),
+    topics: 'Nodejs',
+    tasks: 'Authontication'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d460"),
+    topics: 'CSS',
+    tasks: 'responsive_web_design'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d461"),
+    topics: 'Node_js',
+    tasks: 'create_api'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d462"),
+    topics: 'Java Script',
+    tasks: 'responsive_web_design'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d463"),
+    topics: 'HTML',
+    tasks: 'Git Clone'
+  },
+  {
+    _id: ObjectId("6473205f55ebcf3defc7d464"),
+    topics: 'Node_js',
+    tasks: 'create_api'
+  },
+  {
+    _id: ObjectId("6473205f55ebcf3defc7d465"),
+    topics: 'Java Script',
+    tasks: 'Pagination'
+  }
+]
+
+
+2)Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+    db.student.find({company_drives_date: {$gte : new Date("<2020-10-15>"), $lte: new Date("<2020-10-31>")}},{company_drives: 1}).toArray();
+
+  OUTPUT
+     { _id: ObjectId("6472e886b66e7742a549dbff"), company_drives: 'HCL' },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc00"),
+    company_drives: 'WIPRO'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc01"),
+    company_drives: 'Mukja solutions'
+  },
+  { _id: ObjectId("6472e886b66e7742a549dc02"), company_drives: 'CTS' },
+  { _id: ObjectId("6472e9f9b66e7742a549dc03"), company_drives: 'TCS' },
+  {
+    _id: ObjectId("6472e9f9b66e7742a549dc04"),
+    company_drives: 'Mukja solutions'
+  },
+  { _id: ObjectId("6473202655ebcf3defc7d460"), company_drives: 'HCL' },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d461"),
+    company_drives: 'WIPRO'
+  },
+  {
+    _id: ObjectId("6473202655ebcf3defc7d462"),
+    company_drives: 'Mukja solutions'
+  },
+  { _id: ObjectId("6473202655ebcf3defc7d463"), company_drives: 'CTS' },
+  { _id: ObjectId("6473205f55ebcf3defc7d464"), company_drives: 'TCS' },
+  {
+    _id: ObjectId("6473205f55ebcf3defc7d465"),
+    company_drives: 'Mukja solutions'
+
+
+
+3)Find all the company drives and students who are appeared for the placement.
+
+db.student.find({placement: {$eq: "Appeared"}},{user:1})
+
+
+OUTPUT
+ { _id: ObjectId("6472e9f9b66e7742a549dc03"), user: 'Mariyappan' },
+  { _id: ObjectId("6472e9f9b66e7742a549dc04"), user: 'Rajalakshmi' },
+  { _id: ObjectId("6473202655ebcf3defc7d44c"), user: 'murugappan' },
+  { _id: ObjectId("6473202655ebcf3defc7d44d"), user: 'Abisheik' },
+  { _id: ObjectId("6473202655ebcf3defc7d44e"), user: 'poovizhi' },
+  { _id: ObjectId("6473202655ebcf3defc7d44f"), user: 'Mahendran' },
+  { _id: ObjectId("6473202655ebcf3defc7d450"), user: 'Karunya' },
+  { _id: ObjectId("6473202655ebcf3defc7d452"), user: 'Natrajan' },
+  { _id: ObjectId("6473202655ebcf3defc7d453"), user: 'Gokul' },
+  { _id: ObjectId("6473202655ebcf3defc7d454"), user: 'Sangeetha' },
+  { _id: ObjectId("6473202655ebcf3defc7d455"), user: 'Murad' },
+  { _id: ObjectId("6473202655ebcf3defc7d459"), user: 'Ragul' },
+  { _id: ObjectId("6473202655ebcf3defc7d45b"), user: 'Oviya' },
+  { _id: ObjectId("6473202655ebcf3defc7d45c"), user: 'Balan KK' },
+  { _id: ObjectId("6473202655ebcf3defc7d45d"), user: 'Naveen Kumar' },
+  { _id: ObjectId("6473202655ebcf3defc7d45e"), user: 'Devika' },
+  { _id: ObjectId("6473202655ebcf3defc7d45f"), user: 'SHeik Thavudhu' },
+  { _id: ObjectId("6473202655ebcf3defc7d460"), user: 'Karthi' },
+  { _id: ObjectId("6473202655ebcf3defc7d461"), user: 'Venkat Prabu' },
+  { _id: ObjectId("6473202655ebcf3defc7d462"), user: 'Lakshmi' },
+
+
+4)Find the number of problems solved by the user in codekata
+
+db.student.find({},{user: 1, codekata: 1}).toArray();
+
+OUTPUT
+
+
+  {
+    _id: ObjectId("6472e886b66e7742a549dbeb"),
+    user: 'murugappan',
+    codekata: 2500
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbec"),
+    user: 'Abisheik',
+    codekata: 300
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbed"),
+    user: 'poovizhi',
+    codekata: 225
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbee"),
+    user: 'Mahendran',
+    codekata: 750
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbef"),
+    user: 'Karunya',
+    codekata: 150
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf0"),
+    user: 'Dineshkumar',
+    codekata: 345
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf1"),
+    user: 'Natrajan',
+    codekata: 50
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf2"),
+    user: 'Gokul',
+    codekata: 525
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf3"),
+    user: 'Sangeetha',
+    codekata: 155
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf4"),
+    user: 'Murad',
+    codekata: 435
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf5"),
+    user: 'Mohammed Riyas',
+    codekata: 444
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf6"),
+    user: 'Manikandan',
+    codekata: 250
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf7"),
+    user: 'Jeba Godson',
+    codekata: 234
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf8"),
+    user: 'Ragul',
+    codekata: 900
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbf9"),
+    user: 'Vishnu',
+    codekata: 55
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbfa"),
+    user: 'Oviya',
+    codekata: '400'
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbfb"),
+    user: 'Balan KK',
+    codekata: 345
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbfc"),
+    user: 'Naveen Kumar',
+    codekata: 465
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbfd"),
+    user: 'Devika',
+    codekata: 452
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbfe"),
+    user: 'SHeik Thavudhu',
+    codekata: 785
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dbff"),
+    user: 'Karthi',
+    codekata: 30
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc00"),
+    user: 'Venkat Prabu',
+    codekata: 222
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc01"),
+    user: 'Lakshmi',
+    codekata: 50
+  },
+  {
+    _id: ObjectId("6472e886b66e7742a549dc02"),
+    user: 'Nandini swaminathan',
+    codekata: 350
+  },
+  {
+    _id: ObjectId("6472e9f9b66e7742a549dc03"),
+    user: 'Mariyappan',
+    codekata: 522
+  },
+  {
+    _id: ObjectId("6472e9f9b66e7742a549dc04"),
+    user: 'Rajalakshmi',
+    codekata: 850
+
+5)Find all the mentors with who has the mentee's count more than 15
+
+
+db.student.aggregate([
+    {$group: {_id: "$mentors", count: {$sum: 1}}},
+    {$match: {_id: {$ne: null}, count: {$gt: 15}}}
+]);
+db.student.find({mentors: "Deepika"},{user: 1, mentors: 1});
+
+OUTPUT
+
+{
+    _id: ObjectId("6473202655ebcf3defc7d45f"),
+    user: 'SHeik Thavudhu',
+    mentors: 'Deepika'
+ ObjectId("6473202655ebcf3defc7d45c"),
+    user: 'Balan KK',
+    mentors: 'Deepika'
+  },
+
+
+6)Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+  db.student.find({$or: [{attendance: "Absent"}, {task_date: {$not: {$gte: new Date("<2020-10-15>"), $lte: new Date("<2020-10-31>")}}}]}).toArray()
+    
